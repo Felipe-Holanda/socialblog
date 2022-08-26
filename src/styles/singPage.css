@@ -1,0 +1,85 @@
+body{
+    background-color: #5C5D8D;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section{
+    background-color: #6495EDBF;
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    margin: 100px 30px;
+    flex-direction: column;
+    width: 400px;
+}
+
+section h1{
+    align-self: center;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bolder;
+    color: white;
+}
+
+#singUpForm{
+    float: left;
+}
+
+#singInForm{
+    float: right;
+}
+
+section input{
+    align-self: center;
+    margin: 0.5rem;
+    width: 80%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #6495ED;
+    margin-bottom: 0.5rem;
+}
+
+section button{
+    align-self: center;
+    margin: 0.5rem;
+    width: 30%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: white;
+    background-color: #5C5D8D;
+    margin-bottom: 0.5rem;
+    border: none;
+    cursor: pointer;
+
+}
+
+section button:hover{
+    background-color: #7676a3;
+}
+
+@media screen and (max-width: 985px){
+
+    body{
+        background-color: #5C5D8D;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: white;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    section{
+        width: 80%;
+    }
+
+    #singInForm{
+        position: relative;
+        top: 0;
+    }
+}
+    
