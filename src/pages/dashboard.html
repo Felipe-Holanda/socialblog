@@ -4,9 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard | Kenzie Blog</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
 </head>
 <body>
-    <h1>Olá!</h1>
+    <header>
+        <figure>
+            <img id="profilePicture" src="https://avatars.githubusercontent.com/u/93724958?v=4" alt="Imagem de perfil do usuário.">
+            <h1 id="username">Fulaninho</h1>
+        </figure>
+        <nav>
+            <button id="btnLogout">Logout</button>
+        </nav>
+    </header>
+    <main>
+            <section id="#top">
+                <textarea id="postText" placeholder="No que você está pensando?"></textarea>
+                <button id="btnPost"><span id="cssCross"></span></button>
+            </section>
+            <article>
+                 <div>
+                     <figure>
+                        <img src="https://avatars.githubusercontent.com/u/93724958?v=4" alt="Imagem de perfil do usuário">
+                        <h3 class="ifMobile">Usuário</h3>
+                        <nav class="ifWeb">
+                            <button id="editBtn"></button>
+                            <button id="deleteBtn"></button>
+                        </nav>
+                    </figure>
+                 </div>
+                 <div id="articleContent">
+                 <h3 class="ifWeb">Usuario</h3>
+                 <p>Como que o homem vai entrar numa lua, se ela é redonda? E ela não tem porta?!</p>
+                 <nav class="ifMobile">
+                     <button id="editBtn"></button>
+                     <button id="deleteBtn"></button>
+                    </nav>
+                    <small>22/08/2022</small>
+                </div>
+             </article>
+    </main>
+    <footer>
+        <span id="fabBtn"></span>
+    </footer>
+    <script type="module" src="../script/navigationsElements.js"></script>
 </body>
 </html>
