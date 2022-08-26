@@ -31,6 +31,7 @@ section h1{
 
 #singInForm{
     float: right;
+    transform: translateY(40px)
 }
 
 section input{
@@ -75,11 +76,6 @@ section button:hover{
     
     section{
         width: 80%;
-    }
-
-    #singInForm{
-        position: relative;
-        top: 0;
     }
 }
     
