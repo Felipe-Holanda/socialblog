@@ -19,7 +19,7 @@
         </nav>
     </header>
     <main>
-            <section id="#top">
+            <section>
                 <textarea id="postText" placeholder="No que você está pensando?"></textarea>
                 <button id="btnPost"><span id="cssCross"></span></button>
             </section>
@@ -29,8 +29,8 @@
                         <img src="https://avatars.githubusercontent.com/u/93724958?v=4" alt="Imagem de perfil do usuário">
                         <h3 class="ifMobile">Usuário</h3>
                         <nav class="ifWeb">
-                            <button id="editBtn"></button>
-                            <button id="deleteBtn"></button>
+                            <button class="editBtn"></button>
+                            <button class="deleteBtn"></button>
                         </nav>
                     </figure>
                  </div>
@@ -38,12 +38,20 @@
                  <h3 class="ifWeb">Usuario</h3>
                  <p>Como que o homem vai entrar numa lua, se ela é redonda? E ela não tem porta?!</p>
                  <nav class="ifMobile">
-                     <button id="editBtn"></button>
-                     <button id="deleteBtn"></button>
+                     <button class="editBtn"></button>
+                    <button class="deleteBtn"></button>
                     </nav>
                     <small>22/08/2022</small>
                 </div>
              </article> -->
+            <section class="delete close">
+                <h2>Deseja Deletar esse poster?</h2>
+                <button>Deletar</button>
+            </section>
+            <section class="edit close">
+                <textarea id="editarea" placeholder="Estou mudando meu comentario"></textarea>
+                <button><span></span></button>
+            </section>
     </main>
     <footer>
         <span id="fabBtn"></span>

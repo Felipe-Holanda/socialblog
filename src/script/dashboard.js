@@ -13,9 +13,9 @@ class Article{
                 let navWeb = document.createElement('nav')
                 navWeb.classList.add('ifWeb')
                     let btnEditweb = document.createElement('button')
-                    btnEditweb.id = 'editBtn'
+                    btnEditweb.classList.add('editBtn')
                     let btnDelweb = document.createElement('button')
-                    btnDelweb.id = 'deleteBtn'
+                    btnDelweb.classList.add('deleteBtn')
                 navWeb.appendChild(btnEditweb)
                 navWeb.appendChild(btnDelweb)
             figure.appendChild(img)
@@ -30,9 +30,9 @@ class Article{
             let navMobile = document.createElement('nav')
             navMobile.classList.add('ifMobile')
                 let btnEditmobile = document.createElement('button')
-                btnEditmobile.id = 'editBtn'
+                btnEditmobile.classList.add('editBtn')
                 let btnDelmobile = document.createElement('button')
-                btnDelmobile.id = 'deleteBtn'
+                btnDelmobile.classList.add('deleteBtn')
             navMobile.appendChild(btnEditmobile)
             navMobile.appendChild(btnDelmobile)
             let small = document.createElement('small')
@@ -67,6 +67,11 @@ class Article{
         else{
             data.innerText = arr.updatedAt
         }
+        if(idLogado != id && window.outerWidth<966){
+            botoesWeb.classList.add('close')
+            botoesMobile.classList.add('close')
+            botoesMobile.classList.remove('ifMobile')
+        } 
         if(idLogado != id){
             botoesWeb.classList.add('close')
             botoesMobile.classList.add('close')
@@ -92,7 +97,83 @@ class Article{
 
 class DashboardPage{
 
-    static 
+    static idLogado = localStorage.getItem('@BlogM2:userId')
+
+    static async carregarInforusuario(){
+        let profilePicture = document.getElementById('profilePicture')
+        let username = document.getElementById('username')
+        let response = await Api.displayUser(this.idLogado)
+        profilePicture.src = response.avatarUrl
+        username.innerText = response.username
+    }
+
+    static publicarPost(){
+        const local = document.getElementById('btnPost')
+        const localPost = document.getElementById('postText')
+        local.addEventListener('click', async () => {
+            const post = localPost.value
+            const body = {
+                'content': post
+            }
+            await Api.newPost(body)
+        })
+    }
+
+    static deletePost (){
+        document.body.addEventListener('click', (obj) => {
+            if(obj.target.className === "deleteBtn"){
+                const div = document.getElementById('articleContent').children
+                const id = div[1].id
+                let local = document.querySelector('.delete')
+                local.classList.remove('close')
+                local.addEventListener('click', async (obj) => {
+                    if(obj.target.localName === "button"){
+                        await Api.deletePost(id)
+                    }
+                })
+            }
+        })      
+    }
+
+    static editPost (){
+        document.body.addEventListener('click', (obj) => {
+            if(obj.target.className === "editBtn"){
+                const div = document.getElementById('articleContent').children
+                const id = div[1].id
+                let local = document.querySelector('.edit')
+                local.classList.remove('close')
+                local.addEventListener('click', async (obj) => {
+                    if(obj.target.localName === "button"){
+                        let input = document.getElementById('editarea')
+                        let body = {
+                            content: input.value
+                        }
+                        console.log(body)
+                        await Api.editPost(id,body)
+                    }
+                })
+            }
+        })      
+    }
+
+    static irTopo(){
+        document.getElementById('fabBtn').addEventListener('click',() => {
+            location.reload()
+        })
+    }
+
+    static logout(){
+        document.getElementById('btnLogout').addEventListener('click',() => {
+            localStorage.removeItem('@BlogM2:token')
+            window.location.assign('../../index.html')
+        })
+    }
 }
 
 Article.publicarArticle()
+DashboardPage.carregarInforusuario()
+DashboardPage.publicarPost()
+DashboardPage.deletePost()
+DashboardPage.editPost()
+DashboardPage.irTopo()
+DashboardPage.logout()
