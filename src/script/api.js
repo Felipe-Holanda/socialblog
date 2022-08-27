@@ -42,4 +42,16 @@ export class Api {
     return newUser
   }
 
+  static async displayPost(){
+    let endPoint = '/posts'
+    let arrPost = await fetch(`${this.baseUrl}${endPoint}`,{
+      method: 'GET',
+      headers: this.headers
+    })
+    .then(res => res.json())
+    .catch(err => console.log(err))
+
+    return arrPost
+  }
+
 }

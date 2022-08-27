@@ -5,6 +5,10 @@ body{
     background-color: #4d4d78;
 }
 
+.close{
+    display: none;
+}
+
 .ifMobile{
     display: none;
 }
