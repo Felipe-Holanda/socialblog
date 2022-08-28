@@ -116,6 +116,7 @@ class DashboardPage {
                 'content': post
             }
             await Api.newPost(body)
+            post.value = ""
         })
     }
 
@@ -133,6 +134,7 @@ class DashboardPage {
                 })
             }
         })
+
     }
 
     static editPost() {
@@ -150,6 +152,7 @@ class DashboardPage {
                         }
                         console.log(body)
                         await Api.editPost(id, body)
+                        input.value = ""
                     }
                 })
             }
