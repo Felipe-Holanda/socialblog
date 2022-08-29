@@ -65,7 +65,7 @@ class Article {
             data.innerText = formtData.strDate(new Date(arr.createdAt))
         }
         else {
-            data.innerText = arr.updatedAt
+            data.innerText = formtData.strDate(new Date(arr.updatedAt))
         }
         if (idLogado != id && window.outerWidth < 966) {
             botoesWeb.classList.add('close')
@@ -145,14 +145,13 @@ class DashboardPage {
                 let local = document.querySelector('.edit')
                 local.classList.remove('close')
                 local.addEventListener('click', async (obj) => {
-                    if (obj.target.localName === "button") {
+                    if (obj.target.localName === "button" || obj.target.localName === "span") {
                         let input = document.getElementById('editarea')
                         let body = {
                             content: input.value
                         }
                         console.log(body)
                         await Api.editPost(id, body)
-                        input.value = ""
                     }
                 })
             }

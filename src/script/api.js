@@ -3,7 +3,7 @@ export class Api {
   static baseUrl = 'https://blog-m2.herokuapp.com'
   static token = localStorage.getItem('@BlogM2:token') || ""
   static headers = {
-    'Content-Type': 'application/json',
+    'Content-type': 'application/json',
     Authorization: `Bearer ${this.token}`
   }
 
