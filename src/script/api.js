@@ -34,7 +34,7 @@ export class Api {
     })
     .then(res => res.json())
     .then(res => {
-      window.location.assign('../../index.html')
+      location.reload()
       return res
     })
     .catch(err => console.log(err))
