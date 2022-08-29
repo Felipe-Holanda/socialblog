@@ -19,18 +19,18 @@
         </nav>
     </header>
     <main>
-            <section id="#top">
+            <section>
                 <textarea id="postText" placeholder="No que você está pensando?"></textarea>
                 <button id="btnPost"><span id="cssCross"></span></button>
             </section>
-            <article>
+            <!-- <article>
                  <div>
                      <figure>
                         <img src="https://avatars.githubusercontent.com/u/93724958?v=4" alt="Imagem de perfil do usuário">
                         <h3 class="ifMobile">Usuário</h3>
                         <nav class="ifWeb">
-                            <button id="editBtn"></button>
-                            <button id="deleteBtn"></button>
+                            <button class="editBtn"></button>
+                            <button class="deleteBtn"></button>
                         </nav>
                     </figure>
                  </div>
@@ -38,16 +38,43 @@
                  <h3 class="ifWeb">Usuario</h3>
                  <p>Como que o homem vai entrar numa lua, se ela é redonda? E ela não tem porta?!</p>
                  <nav class="ifMobile">
-                     <button id="editBtn"></button>
-                     <button id="deleteBtn"></button>
+                     <button class="editBtn"></button>
+                    <button class="deleteBtn"></button>
                     </nav>
                     <small>22/08/2022</small>
                 </div>
-             </article>
+             </article> -->
+             <div class="delete close">
+                 <div class="deleteContent">
+                     <h2>Deseja deletar esta publicação?</h2>
+                    <small>Note que, esta ação é permanente!</small>
+                     <button>Deletar</button>
+                 </div>
+             </div>
+             
+            <!--<section class="delete close">
+                <div>
+                    <h2>Deseja Deletar esse poster?</h2>
+                    <button>Deletar</button>
+                </div>
+            </section>-->
+            <section class="edit close">
+                <div class="editContent">
+                    <h2>Editar publicação</h2>
+                    <textarea id="editarea" placeholder="O que gostaria de editar?"></textarea>
+                    <button><span></span></button>
+                </div>
+            </section>
+            <!--<section  class="edit close">
+                <div>
+                    <textarea id="editarea" placeholder="Estou mudando meu comentario"></textarea>
+                    <button><span></span></button>
+                </div>
+            </section>-->
     </main>
     <footer>
         <span id="fabBtn"></span>
     </footer>
-    <script type="module" src="../script/navigationsElements.js"></script>
+    <script type="module" src="../script/dashboard.js"></script>
 </body>
 </html>
